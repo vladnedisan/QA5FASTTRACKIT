@@ -1,6 +1,9 @@
 package org.fasttrack.features;
 
 
+import org.fasttrack.pages.SearchResultsPage;
+import org.fasttrack.utils.Constants;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class SearchTest extends BaseTest{
@@ -8,7 +11,7 @@ public class SearchTest extends BaseTest{
 
     @Test
     public void loginAndSearchForProductNameTest(){
-        loginSteps.doLogin("cosmin@fasttrackit.org","123456");
+        loginSteps.doLogin(Constants.USER_EMAIL,Constants.USER_PASS);
         searchSteps.searchForKeyword("necklace");
         searchSteps.findProductWithNameInListAndOpen("SILVER DESERT NECKLACE");
 
@@ -16,7 +19,7 @@ public class SearchTest extends BaseTest{
 
     @Test
     public void loginAndSearchForSecondProductNameTest(){
-        loginSteps.doLogin("cosmin@fasttrackit.org","123456");
+        loginSteps.doLogin(Constants.USER_EMAIL,Constants.USER_PASS);
         searchSteps.searchForKeyword("shirt");
         searchSteps.findProductWithNameInListAndOpen("FRENCH CUFF COTTON TWILL OXFORD");
 

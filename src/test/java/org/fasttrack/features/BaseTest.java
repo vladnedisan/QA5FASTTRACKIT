@@ -7,6 +7,7 @@ import org.fasttrack.steps.CartSteps;
 import org.fasttrack.steps.CheckoutSteps;
 import org.fasttrack.steps.LoginSteps;
 import org.fasttrack.steps.SearchSteps;
+import org.fasttrack.utils.Constants;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -29,6 +30,6 @@ public class BaseTest {
     @Before
     public void init(){
         driver.manage().window().maximize();
-        driver.get("http://testfasttrackit.info/selenium-test");
+        driver.get(Constants.BASE_URL);
     }
 }
