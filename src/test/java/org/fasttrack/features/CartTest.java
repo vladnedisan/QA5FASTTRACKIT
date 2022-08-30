@@ -11,4 +11,13 @@ public class CartTest extends BaseTest {
         searchSteps.navigateToProductName("SILVER DESERT NECKLACE");
         cartSteps.addProductToCart();
     }
+    @Test
+    public void checkTotalAndSubtotalTest(){
+        searchSteps.navigateToProductName("SILVER DESERT NECKLACE");
+        cartSteps.addProductToCart();
+        cartSteps.checkSuccessMessage("SILVER DESERT NECKLACE");
+
+        cartSteps.checkSubtotalPrice();
+        cartSteps.checkTotalPrice();
+    }
 }

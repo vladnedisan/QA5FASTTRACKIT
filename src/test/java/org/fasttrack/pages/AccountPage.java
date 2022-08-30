@@ -1,10 +1,9 @@
 package org.fasttrack.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 
-public class AccountPage extends PageObject {
+public class AccountPage extends BasePage {
 
     @FindBy(css = ".welcome-msg strong")
     private WebElementFacade welcomeTextElement;

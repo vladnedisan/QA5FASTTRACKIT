@@ -12,7 +12,7 @@ public class SearchResultsPage extends PageObject {
     private static List<WebElementFacade> listOfProductNames;
 
     public static boolean findProductInGridAndOpen(String productName){
-        for (WebElementFacade element : listOfProductNames){
+        for (WebElementFacade element: listOfProductNames){
             if (element.getText().equalsIgnoreCase(productName)){
                 element.click();
                 return true;
