@@ -13,7 +13,7 @@ public class HomePage extends PageObject {
     @FindBy(css = ".skip-account .label")
     private WebElementFacade accountLink;
 
-    @FindBy(css = "a[title='Log In']")
+    @FindBy(css = "#mastheads > div.top-header.clearfix > div > div.headertwo-wrap > div.login-woocommerce > a")
     private WebElementFacade loginLink;
 
     @FindBy( id = "search")

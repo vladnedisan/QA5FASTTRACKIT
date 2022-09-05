@@ -12,28 +12,28 @@ public class LoginSteps extends BaseSteps {
 
     @Step
     public void navigateToLoginPage() {
-        homePage.clickAccountLink();
+     //   homePage.clickAccountLink();
         homePage.clickLoginLink();
     }
 
     @Step
     public void setUserEmail(String email) {
-        loginPage.setEmailField(email);
+        accountPage.setUsernameField(email);
     }
 
     @Step
     public void setPassword(String password) {
-        loginPage.setPasswordField(password);
+        accountPage.setPasswordField(password);
     }
 
     @Step
     public void clickLogin() {
-        loginPage.clickLoginButton();
+        accountPage.clickLoginButton();
     }
 
     @Step
     public void verifyUserIsLoggedIn(String userName) {
-        Assert.assertEquals("Hello, " + userName + "!", accountPage.getWelcomeText());
+        Assert.assertEquals(userName, accountPage.getWelcomeText());
     }
 
     @Step
