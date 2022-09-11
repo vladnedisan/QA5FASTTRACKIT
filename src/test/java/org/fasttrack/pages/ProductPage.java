@@ -9,7 +9,7 @@ public class ProductPage extends BasePage {
     @FindBy(css = ".add-to-cart-buttons button")
     private WebElement addToCartButton;
 
-    public void clickAddToCart (){
+    public void clickAddToCart() {
         clickOn(addToCartButton);
     }
 

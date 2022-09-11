@@ -28,7 +28,7 @@ public class BaseTest {
     protected CheckoutSteps checkoutSteps;
 
     @Before
-    public void init(){
+    public void init() {
         driver.manage().window().maximize();
         driver.get(Constants.BASE_URL);
     }

@@ -14,9 +14,15 @@ public class AccountPage extends BasePage {
     @FindBy(css = "#customer_login > div.u-column1.col-1 > form > p:nth-child(3) > button")
     private WebElementFacade loginButton;
 
-    public void setUsernameField(String value) {
-        typeInto(usernameField, value);
-    }
+    @FindBy(css = "#customer_login > div.u-column1.col-1 > form > p.woocommerce-LostPassword.lost_password > a")
+    private WebElementFacade lostPasswordButton;
+
+    @FindBy(css = "#user_login")
+    private WebElementFacade lostPasswordTextField;
+
+    @FindBy (css = "#post-7 > div > div > div > div > form > p:nth-child(4) > button")
+    private WebElementFacade resetButton;
+
 
     public void setPasswordField(String value) {
         typeInto(passwordField, value);
@@ -24,11 +30,23 @@ public class AccountPage extends BasePage {
 
     public void clickLoginButton() {
         clickOn(loginButton);
+    }
 
+    public void clickLostPasswordButton() {
+        clickOn(lostPasswordButton);
+    }
+    public void clickResetButton(){
+        clickOn(resetButton);
     }
 
     public String getWelcomeText() {
         return welcomeTextElement.getText();
+    }
+    public void setUsernameField(String value) {
+        typeInto(usernameField, value);
+    }
+    public void setLostPasswordTextField( String value) {
+        typeInto(lostPasswordTextField, value);
     }
 
 }

@@ -1,6 +1,7 @@
 package org.fasttrack.steps;
 
 import net.thucydides.core.annotations.Step;
+import org.fasttrack.pages.AccountPage;
 import org.junit.Assert;
 
 public class LoginSteps extends BaseSteps {
@@ -12,8 +13,13 @@ public class LoginSteps extends BaseSteps {
 
     @Step
     public void navigateToLoginPage() {
-     //   homePage.clickAccountLink();
+        homePage.clickAccountLink();
         homePage.clickLoginLink();
+    }
+
+    @Step
+    public void navigateToAccountPage() {
+        homePage.clickAccountLink();
     }
 
     @Step
@@ -32,20 +38,50 @@ public class LoginSteps extends BaseSteps {
     }
 
     @Step
+    public void clickLostPassword() {
+        accountPage.clickLostPasswordButton();
+    }
+
+    @Step
+    public void clickResetPassword() {
+        accountPage.clickResetButton();
+    }
+
+    @Step
     public void verifyUserIsLoggedIn(String userName) {
         Assert.assertEquals(userName, accountPage.getWelcomeText());
     }
 
     @Step
-    public void verifyUserNotLoggedIn(){
-        Assert.assertEquals("Invalid login or password.",loginPage.getErrorMessage());
+    public void setLostPasswordField(String value) {
+        accountPage.setLostPasswordTextField(value);
     }
 
     @Step
-    public void doLogin(String email, String pass){
+    public void verifyUserNotLoggedInPassword() {
+        Assert.assertEquals("ERROR: The password you entered for the email address test_register@test.ro is incorrect. Lost your password?", loginPage.getErrorMessage());
+    }
+
+    @Step
+    public void verifyUserNotLoggedInEMAIL() {
+        Assert.assertEquals("ERROR: Invalid email address. Lost your password?", loginPage.getErrorMessage());
+    }
+
+    @Step
+    public void verifyResetEmailIsSent() {
+        Assert.assertEquals("Password reset email has been sent.", loginPage.getNotificationMessage());
+    }
+    @Step
+    public void verifyErrorMessageInvalidUsernameOrEmail() {
+        Assert.assertEquals("Invalid username or email.", loginPage.getNotificationMessageInvalidUsernameOrEmail());
+    }
+    @Step
+    public void doLogin(String email, String pass) {
         navigateToLoginPage();
         setUserEmail(email);
         setPassword(pass);
         clickLogin();
     }
+
+
 }

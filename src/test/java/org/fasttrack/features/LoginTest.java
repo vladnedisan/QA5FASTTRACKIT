@@ -4,7 +4,7 @@ package org.fasttrack.features;
 import org.fasttrack.utils.Constants;
 import org.junit.Test;
 
-public class LoginTest extends BaseTest{
+public class LoginTest extends BaseTest {
 
 
     @Test
@@ -17,12 +17,39 @@ public class LoginTest extends BaseTest{
     }
 
     @Test
-    public void loginWithInvalidPasswordTest(){
+    public void loginWithInvalidPasswordTest() {
         loginSteps.navigateToLoginPage();
         loginSteps.setUserEmail(Constants.USER_EMAIL);
-        loginSteps.setPassword(Constants.USER_PASS+"a");
+        loginSteps.setPassword(Constants.USER_PASS + "a");
         loginSteps.clickLogin();
-        loginSteps.verifyUserNotLoggedIn();
+        loginSteps.verifyUserNotLoggedInPassword();
     }
 
+    @Test
+    public void loginWithInvalidEmaildTest() {
+        loginSteps.navigateToLoginPage();
+        loginSteps.setUserEmail(Constants.USER_EMAIL + "a");
+        loginSteps.setPassword(Constants.USER_PASS);
+        loginSteps.clickLogin();
+        loginSteps.verifyUserNotLoggedInEMAIL();
+    }
+
+    @Test
+    public void lostPasswordValidEmailTest() {
+        loginSteps.navigateToAccountPage();
+        loginSteps.clickLostPassword();
+        loginSteps.setLostPasswordField(Constants.LOSTUSER_EMAIL);
+        loginSteps.clickResetPassword();
+        loginSteps.verifyResetEmailIsSent();
+    }
+
+    @Test
+    public void lostPasswordInvalidEmailTest() {
+        loginSteps.navigateToAccountPage();
+        loginSteps.clickLostPassword();
+        loginSteps.setLostPasswordField(Constants.LOSTUSER_EMAIL + "a");
+        loginSteps.clickResetPassword();
+        loginSteps.verifyErrorMessageInvalidUsernameOrEmail();
+
+    }
 }

@@ -15,8 +15,13 @@ public class LoginPage extends PageObject {
     @FindBy(id = "send2")
     private WebElementFacade loginButton;
 
-    @FindBy(css = ".error-msg span")
+    @FindBy(css = "#post-7 > div > div > div > div > ul > li")
     private WebElementFacade errorMessageElement;
+
+    @FindBy (css = "#post-7 > div > div > div > div > div")
+    private WebElementFacade resetPasswordEmailIsSent;
+    @FindBy (css = "#post-7 > div > div > div > div > ul > li")
+    private WebElementFacade notificationResetPasswordInvalidUsernameOrEmail;
 
     public void setEmailField(String value) {
         typeInto(emailField, value);
@@ -30,8 +35,14 @@ public class LoginPage extends PageObject {
         clickOn(loginButton);
     }
 
-    public String getErrorMessage(){
+    public String getErrorMessage() {
         return errorMessageElement.getText();
+    }
+    public String getNotificationMessage(){
+        return resetPasswordEmailIsSent.getText();
+    }
+    public String getNotificationMessageInvalidUsernameOrEmail(){
+        return notificationResetPasswordInvalidUsernameOrEmail.getText();
     }
 
 }

@@ -11,9 +11,9 @@ public class SearchResultsPage extends PageObject {
     @FindBy(css = ".category-products .item .product-name a")
     private static List<WebElementFacade> listOfProductNames;
 
-    public static boolean findProductInGridAndOpen(String productName){
-        for (WebElementFacade element: listOfProductNames){
-            if (element.getText().equalsIgnoreCase(productName)){
+    public static boolean findProductInGridAndOpen(String productName) {
+        for (WebElementFacade element : listOfProductNames) {
+            if (element.getText().equalsIgnoreCase(productName)) {
                 element.click();
                 return true;
             }
