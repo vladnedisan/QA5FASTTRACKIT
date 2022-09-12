@@ -41,6 +41,9 @@ public class AccountPage extends BasePage {
     @FindBy(css= "#post-7 > div > div > div > div > ul > li")
     private WebElementFacade alreadyRegisteredEmailAddressText;
 
+    @FindBy(id= "rememberme")
+    private WebElementFacade rememberMeCheckBox;
+
     public void setPasswordField(String value) {
         typeInto(passwordField, value);
     }
@@ -87,6 +90,9 @@ public class AccountPage extends BasePage {
     public boolean getAlreadyRegisteredEmailAddressText(){
         shouldBeVisible(alreadyRegisteredEmailAddressText);
         return true;
+    }
+    public void setRememberMeCheckBox(){
+        setCheckbox(rememberMeCheckBox,true);
     }
 
 }
