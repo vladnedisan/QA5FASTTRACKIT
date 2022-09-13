@@ -9,8 +9,8 @@ public class SearchTest extends BaseTest {
     @Test
     public void loginAndSearchForProductNameTest() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
-        searchSteps.searchForKeyword("necklace");
-        searchSteps.findProductWithNameInListAndOpen("SILVER DESERT NECKLACE");
+        searchSteps.searchForKeyword("a");
+        searchSteps.findProductWithNameInListAndOpen("a");
 
     }
 

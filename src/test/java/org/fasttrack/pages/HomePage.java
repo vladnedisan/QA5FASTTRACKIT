@@ -19,11 +19,11 @@ public class HomePage extends PageObject {
     @FindBy(css = "#customer_login > div.u-column1.col-1 > form > p.woocommerce-LostPassword.lost_password > a")
     private WebElementFacade lostPassword;
 
-    @FindBy(id = "search")
+    @FindBy(css = "#mastheads > div.top-header.clearfix > div > div.headertwo-wrap > div.search-form > form > input.search-field")
     private WebElementFacade searchField;
 
 
-    @FindBy(css = ".search-button")
+    @FindBy(css = "#mastheads > div.top-header.clearfix > div > div.headertwo-wrap > div.search-form > form > button")
     private WebElementFacade searchButton;
 
     public void clickAccountLink() {
