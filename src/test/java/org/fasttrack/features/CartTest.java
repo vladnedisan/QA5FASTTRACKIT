@@ -13,6 +13,24 @@ public class CartTest extends BaseTest {
         cartSteps.checkCart();
     }
 
+    @Test
+    public void removeProductFromCartTest() {
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.navigateToProductName("Beanie");
+        cartSteps.addProductToCart();
+        cartSteps.checkCart();
+        cartSteps.removeProductFromCart();
+
+    }
+
+    @Test
+    public void increaseQuantityInCartListTest() {
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.navigateToProductName("Beanie");
+        cartSteps.addProductToCart();
+        cartSteps.checkCart();
+        cartSteps.increaseQunatityInCart();
+    }
     //  @Test
     //  public void checkTotalAndSubtotalTest() {
     //      searchSteps.navigateToProductName("SILVER DESERT NECKLACE");

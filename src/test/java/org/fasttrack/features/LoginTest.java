@@ -57,10 +57,10 @@ public class LoginTest extends BaseTest {
         loginSteps.navigateToLoginPage();
         loginSteps.setUserEmail(Constants.USER_EMAIL);
         loginSteps.setPassword(Constants.USER_PASS);
-       //registerSteps.clickOnsetRememberMeCheckBox();
+        loginSteps.clickCheckRememberMeCheckBox();
         loginSteps.clickLogin();
         loginSteps.navigateToLoginPage();
-        //loginSteps.verifyUserIsLoggedIn(Constants.USER_NAME);
+       // loginSteps.verifyUserIsLoggedIn(Constants.USER_NAME);
     }
 
     @Test

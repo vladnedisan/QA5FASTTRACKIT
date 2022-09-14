@@ -73,9 +73,16 @@ public class LoginSteps extends BaseSteps {
     }
 
     @Step
+    public void clickCheckRememberMeCheckBox() {
+        accountPage.setRememberMeCheckBox();
+
+    }
+
+    @Step
     public void verifyErrorMessageInvalidUsernameOrEmail() {
         Assert.assertEquals("Invalid username or email.", loginPage.getNotificationMessageInvalidUsernameOrEmail());
     }
+
 
     @Step
     public void doLogin(String email, String pass) {

@@ -15,6 +15,20 @@ public class CartSteps extends BaseSteps {
     @Step
     public void checkCart() {
         homePage.clickMyCartButton();
+        waitABit(3000);
+    }
+
+    @Step
+    public void removeProductFromCart() {
+        cartPage.clickDeleteProduct();
+        waitABit(3000);
+
+    }
+
+    @Step
+    public void increaseQunatityInCart() {
+        cartPage.setProductQuantity();
+        waitABit(3000);
     }
 
     //@Step

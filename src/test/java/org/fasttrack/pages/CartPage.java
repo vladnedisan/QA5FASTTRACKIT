@@ -11,6 +11,12 @@ public class CartPage extends BasePage {
     @FindBy(css = ".success-msg")
     private WebElementFacade successMessage;
 
+    @FindBy( css ="#post-5 > div > div > div > div > form > table > tbody > tr:nth-child(1) > td.product-remove > a")
+    private WebElementFacade deleteProduct;
+
+    @FindBy ( css = "#post-5 > div > div > div > div > form > table > tbody > tr:nth-child(1) > td.product-quantity > div")
+    private WebElementFacade productQuantity;
+
     @FindBy(css = ".product-cart-total")
     private List<WebElementFacade> subtotalProductList;
 
@@ -25,6 +31,12 @@ public class CartPage extends BasePage {
 
     public String checkSuccessMessage() {
         return successMessage.getText();
+    }
+    public void clickDeleteProduct(){
+        clickOn(deleteProduct);
+    }
+    public void setProductQuantity(){
+        clickOn(productQuantity);
     }
 
     public int getProductsSubtotal() {
