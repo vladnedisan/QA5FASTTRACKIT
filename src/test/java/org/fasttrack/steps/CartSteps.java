@@ -22,7 +22,10 @@ public class CartSteps extends BaseSteps {
     public void removeProductFromCart() {
         cartPage.clickDeleteProduct();
         waitABit(3000);
-
+    }
+    @Step
+    public void verifyCartIsEmptyMessage() {
+        Assert.assertEquals("Your cart is currently empty." ,cartPage.checkCartIsEmptyMessage());
     }
 
     @Step

@@ -20,6 +20,8 @@ public class CartTest extends BaseTest {
         cartSteps.addProductToCart();
         cartSteps.checkCart();
         cartSteps.removeProductFromCart();
+         cartSteps.verifyCartIsEmptyMessage();
+
 
     }
 
