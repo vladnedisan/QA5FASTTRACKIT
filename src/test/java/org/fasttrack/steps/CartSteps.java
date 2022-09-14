@@ -26,8 +26,13 @@ public class CartSteps extends BaseSteps {
     }
 
     @Step
-    public void increaseQunatityInCart() {
-        cartPage.setProductQuantity();
+    public void increaseQuantityInCart() {
+        cartPage.increaseProductQuantity();
+        waitABit(3000);
+    }
+
+    public void decreaseQuantityInCart() {
+        cartPage.decreaseProductQuantity();
         waitABit(3000);
     }
 

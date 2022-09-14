@@ -29,7 +29,16 @@ public class CartTest extends BaseTest {
         searchSteps.navigateToProductName("Beanie");
         cartSteps.addProductToCart();
         cartSteps.checkCart();
-        cartSteps.increaseQunatityInCart();
+        cartSteps.increaseQuantityInCart();
+    }
+
+    @Test
+    public void decreaseQuantityInCartListTest() {
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.navigateToProductName("Beanie");
+        cartSteps.addProductToCart();
+        cartSteps.checkCart();
+        cartSteps.decreaseQuantityInCart();
     }
     //  @Test
     //  public void checkTotalAndSubtotalTest() {

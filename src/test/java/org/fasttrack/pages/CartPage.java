@@ -2,6 +2,7 @@ package org.fasttrack.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.junit.Assert;
 
 import java.util.List;
 
@@ -14,8 +15,11 @@ public class CartPage extends BasePage {
     @FindBy( css ="#post-5 > div > div > div > div > form > table > tbody > tr:nth-child(1) > td.product-remove > a")
     private WebElementFacade deleteProduct;
 
-    @FindBy ( css = "#post-5 > div > div > div > div > form > table > tbody > tr:nth-child(1) > td.product-quantity > div")
-    private WebElementFacade productQuantity;
+    @FindBy ( id = "quantity_63222d1063b87")
+    private WebElementFacade productQuantityTextField;
+
+    @FindBy ( css = "[class='woocommerce-cart-form__cart-item cart_item']:nth-child(1) [class='input-text qty text']")
+    private WebElementFacade quantityValue;
 
     @FindBy(css = ".product-cart-total")
     private List<WebElementFacade> subtotalProductList;
@@ -35,8 +39,37 @@ public class CartPage extends BasePage {
     public void clickDeleteProduct(){
         clickOn(deleteProduct);
     }
-    public void setProductQuantity(){
-        clickOn(productQuantity);
+    public void increaseProductQuantity(){
+        changeProductQuantity(1);
+    }
+
+    public void decreaseProductQuantity () {
+        changeProductQuantity(-1);
+    }
+
+    public void changeProductQuantity (int value) {
+        String productQuantityValue = quantityValue.getAttribute("value");
+        int productQuantityValueInt = Integer.parseInt(productQuantityValue);
+        int changeProductQuantityValue = productQuantityValueInt + value;
+        String productQuantityIncreased = Integer.toString(changeProductQuantityValue);
+        quantityValue.clear();
+        quantityValue.sendKeys(productQuantityIncreased);
+        quantityValue.getAttribute("value");
+        Assert.assertEquals(quantityValue.getAttribute("value"), productQuantityIncreased);
+    }
+
+//    public void enterProductQuantity(String val) {
+//        quantityValue.clear();
+//        quantityValue.sendKeys(val);
+//        quantityValue.getAttribute("value");
+//        Assert.assertEquals(quantityValue.getAttribute("value"), val);
+//    }
+
+    public void enterProductQuantity(String val) {
+        quantityValue.clear();
+        quantityValue.sendKeys(val);
+        quantityValue.getAttribute("value");
+        Assert.assertEquals(quantityValue.getAttribute("value"), val);
     }
 
     public int getProductsSubtotal() {
