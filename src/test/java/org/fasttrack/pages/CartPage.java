@@ -12,16 +12,16 @@ public class CartPage extends BasePage {
     @FindBy(css = ".success-msg")
     private WebElementFacade successMessage;
 
-    @FindBy( css ="#post-5 > div > div > div > div > form > table > tbody > tr:nth-child(1) > td.product-remove > a")
+    @FindBy(css = "#post-5 > div > div > div > div > form > table > tbody > tr:nth-child(1) > td.product-remove > a")
     private WebElementFacade deleteProduct;
 
-    @FindBy (css = "#post-5 > div > div > div > div.woocommerce > p.cart-empty")
-    private WebElementFacade  cartIsEmptyMessage;
+    @FindBy(css = "#post-5 > div > div > div > div.woocommerce > p.cart-empty")
+    private WebElementFacade cartIsEmptyMessage;
 
-    @FindBy ( id = "quantity_63222d1063b87")
+    @FindBy(id = "quantity_63222d1063b87")
     private WebElementFacade productQuantityTextField;
 
-    @FindBy ( css = "[class='woocommerce-cart-form__cart-item cart_item']:nth-child(1) [class='input-text qty text']")
+    @FindBy(css = "[class='woocommerce-cart-form__cart-item cart_item']:nth-child(1) [class='input-text qty text']")
     private WebElementFacade quantityValue;
 
     @FindBy(css = ".product-cart-total")
@@ -39,21 +39,24 @@ public class CartPage extends BasePage {
     public String checkSuccessMessage() {
         return successMessage.getText();
     }
-    public void clickDeleteProduct(){
+
+    public void clickDeleteProduct() {
         clickOn(deleteProduct);
     }
+
     public String checkCartIsEmptyMessage() {
         return cartIsEmptyMessage.getText();
     }
-    public void increaseProductQuantity(){
+
+    public void increaseProductQuantity() {
         changeProductQuantity(1);
     }
 
-    public void decreaseProductQuantity () {
+    public void decreaseProductQuantity() {
         changeProductQuantity(-1);
     }
 
-    public void changeProductQuantity (int value) {
+    public void changeProductQuantity(int value) {
         String productQuantityValue = quantityValue.getAttribute("value");
         int productQuantityValueInt = Integer.parseInt(productQuantityValue);
         int changeProductQuantityValue = productQuantityValueInt + value;
@@ -64,12 +67,6 @@ public class CartPage extends BasePage {
         Assert.assertEquals(quantityValue.getAttribute("value"), productQuantityIncreased);
     }
 
-//    public void enterProductQuantity(String val) {
-//        quantityValue.clear();
-//        quantityValue.sendKeys(val);
-//        quantityValue.getAttribute("value");
-//        Assert.assertEquals(quantityValue.getAttribute("value"), val);
-//    }
 
     public void enterProductQuantity(String val) {
         quantityValue.clear();

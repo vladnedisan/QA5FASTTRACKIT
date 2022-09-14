@@ -14,7 +14,6 @@ public class BaseTest {
 
     @Managed(uniqueSession = true)
     public WebDriver driver;
-
     @Steps
     protected LoginSteps loginSteps;
     @Steps

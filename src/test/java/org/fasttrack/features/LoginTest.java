@@ -6,7 +6,6 @@ import org.junit.Test;
 
 public class LoginTest extends BaseTest {
 
-
     @Test
     public void loginWithValidCredentialsTest() {
         loginSteps.navigateToLoginPage();
@@ -60,7 +59,7 @@ public class LoginTest extends BaseTest {
         loginSteps.clickCheckRememberMeCheckBox();
         loginSteps.clickLogin();
         loginSteps.navigateToLoginPage();
-       // loginSteps.verifyUserIsLoggedIn(Constants.USER_NAME);
+        // loginSteps.verifyUserIsLoggedIn(Constants.USER_NAME);
     }
 
     @Test

@@ -26,7 +26,7 @@ public class HomePage extends PageObject {
     @FindBy(css = "#mastheads > div.top-header.clearfix > div > div.headertwo-wrap > div.search-form > form > button")
     private WebElementFacade searchButton;
 
-    @FindBy (css = "#mastheads > div.top-header.clearfix > div > div.headertwo-wrap > div.view-cart > a > i")
+    @FindBy(css = "#mastheads > div.top-header.clearfix > div > div.headertwo-wrap > div.view-cart > a > i")
     private WebElementFacade viewMyCartButton;
 
     public void clickAccountLink() {
@@ -48,7 +48,8 @@ public class HomePage extends PageObject {
     public void clickSearchButton() {
         clickOn(searchButton);
     }
-    public void clickMyCartButton(){
+
+    public void clickMyCartButton() {
         clickOn(viewMyCartButton);
     }
 }

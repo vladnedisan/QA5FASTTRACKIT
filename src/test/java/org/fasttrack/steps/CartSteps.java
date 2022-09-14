@@ -23,9 +23,10 @@ public class CartSteps extends BaseSteps {
         cartPage.clickDeleteProduct();
         waitABit(3000);
     }
+
     @Step
     public void verifyCartIsEmptyMessage() {
-        Assert.assertEquals("Your cart is currently empty." ,cartPage.checkCartIsEmptyMessage());
+        Assert.assertEquals("Your cart is currently empty.", cartPage.checkCartIsEmptyMessage());
     }
 
     @Step
@@ -38,12 +39,6 @@ public class CartSteps extends BaseSteps {
         cartPage.decreaseProductQuantity();
         waitABit(3000);
     }
-
-    //@Step
-    // public void checkSuccessMessage(String productName) {
-    //   Assert.assertEquals((productName + " was added to your shopping cart.").toLowerCase(),
-    //      cartPage.checkSuccessMessage().toString().toLowerCase());
-    // }
 
     @Step
     public void checkSubtotalPrice() {

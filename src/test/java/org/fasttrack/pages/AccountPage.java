@@ -23,25 +23,25 @@ public class AccountPage extends BasePage {
     @FindBy(css = "#post-7 > div > div > div > div > form > p:nth-child(4) > button")
     private WebElementFacade resetButton;
 
-    @FindBy (id= "reg_email")
+    @FindBy(id = "reg_email")
     private WebElementFacade emailRegisterField;
 
-    @FindBy (id= "reg_password")
+    @FindBy(id = "reg_password")
     private WebElementFacade passwordRegisterField;
 
-    @FindBy(css= "#customer_login > div.u-column2.col-2 > form > p.woocommerce-FormRow.form-row > button")
+    @FindBy(css = "#customer_login > div.u-column2.col-2 > form > p.woocommerce-FormRow.form-row > button")
     private WebElementFacade registerButton;
 
-    @FindBy(css= "#customer_login > div.u-column2.col-2 > form > p:nth-child(2) > div")
+    @FindBy(css = "#customer_login > div.u-column2.col-2 > form > p:nth-child(2) > div")
     private WebElementFacade weakPasswordText;
-    @FindBy(css= "#post-7 > div > div > div > div > ul > li")
+    @FindBy(css = "#post-7 > div > div > div > div > ul > li")
     private WebElementFacade missingEmailAddressText;
-    @FindBy(css= "#mastheads > div.top-header.clearfix > div > div.headertwo-wrap > div.login-woocommerce > a")
+    @FindBy(css = "#mastheads > div.top-header.clearfix > div > div.headertwo-wrap > div.login-woocommerce > a")
     private WebElementFacade logoutLink;
-    @FindBy(css= "#post-7 > div > div > div > div > ul > li")
+    @FindBy(css = "#post-7 > div > div > div > div > ul > li")
     private WebElementFacade alreadyRegisteredEmailAddressText;
 
-    @FindBy(id= "rememberme")
+    @FindBy(id = "rememberme")
     private WebElementFacade rememberMeCheckBox;
 
     public void setPasswordField(String value) {
@@ -71,31 +71,39 @@ public class AccountPage extends BasePage {
     public void setLostPasswordTextField(String value) {
         typeInto(lostPasswordTextField, value);
     }
-    public void setEmailRegisterField(String value){
-        typeInto(emailRegisterField,value);
+
+    public void setEmailRegisterField(String value) {
+        typeInto(emailRegisterField, value);
     }
-    public void setPasswordRegisterField(String value){
-        typeInto(passwordRegisterField,value);
+
+    public void setPasswordRegisterField(String value) {
+        typeInto(passwordRegisterField, value);
     }
-    public void clickRegisterButton(){
+
+    public void clickRegisterButton() {
         clickOn(registerButton);
     }
-    public String getWeakPasswordText(){
+
+    public String getWeakPasswordText() {
         return weakPasswordText.getText();
     }
-    public String getMissingEmailAddressText(){
+
+    public String getMissingEmailAddressText() {
         return missingEmailAddressText.getText();
     }
-    public boolean getLogoutLink(){
+
+    public boolean getLogoutLink() {
         shouldBeVisible(logoutLink);
         return true;
     }
-    public boolean getAlreadyRegisteredEmailAddressText(){
+
+    public boolean getAlreadyRegisteredEmailAddressText() {
         shouldBeVisible(alreadyRegisteredEmailAddressText);
         return true;
     }
-    public void setRememberMeCheckBox(){
-        setCheckbox(rememberMeCheckBox,true);
+
+    public void setRememberMeCheckBox() {
+        setCheckbox(rememberMeCheckBox, true);
     }
 
 }

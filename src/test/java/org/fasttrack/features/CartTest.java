@@ -20,11 +20,8 @@ public class CartTest extends BaseTest {
         cartSteps.addProductToCart();
         cartSteps.checkCart();
         cartSteps.removeProductFromCart();
-         cartSteps.verifyCartIsEmptyMessage();
-
-
+        cartSteps.verifyCartIsEmptyMessage();
     }
-
     @Test
     public void increaseQuantityInCartListTest() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
@@ -33,7 +30,6 @@ public class CartTest extends BaseTest {
         cartSteps.checkCart();
         cartSteps.increaseQuantityInCart();
     }
-
     @Test
     public void decreaseQuantityInCartListTest() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
@@ -47,7 +43,6 @@ public class CartTest extends BaseTest {
     //      searchSteps.navigateToProductName("SILVER DESERT NECKLACE");
     //      cartSteps.addProductToCart();
     //      cartSteps.checkSuccessMessage("SILVER DESERT NECKLACE");
-
     //      cartSteps.checkSubtotalPrice();
     //      cartSteps.checkTotalPrice();
     //  }

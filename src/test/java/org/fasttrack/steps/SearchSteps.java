@@ -10,10 +10,11 @@ public class SearchSteps extends BaseSteps {
         homePage.setSearchField(keyword);
         homePage.clickSearchButton();
     }
-       @Step
-     public void navigateToProductName(String productName) {
+
+    @Step
+    public void navigateToProductName(String productName) {
         searchForKeyword(productName);
-          //findProductWithNameInListAndOpen(productName);
-      }
+        //findProductWithNameInListAndOpen(productName);
+    }
 
 }

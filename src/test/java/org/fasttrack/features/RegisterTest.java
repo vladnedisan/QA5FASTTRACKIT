@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class RegisterTest extends BaseTest {
     @Test
-    public void registerWithValidCredentialsTest(){
+    public void registerWithValidCredentialsTest() {
         loginSteps.navigateToLoginPage();
         registerSteps.setRegisterUserEmail("abcd@test.ro");
         registerSteps.setRegisterPassword("1qaz@WSX3edc");
@@ -13,7 +13,7 @@ public class RegisterTest extends BaseTest {
     }
 
     @Test
-    public void registerWithMissingEmailTest(){
+    public void registerWithMissingEmailTest() {
         loginSteps.navigateToLoginPage();
         registerSteps.setRegisterUserEmail("");
         registerSteps.setRegisterPassword("1qaz@WSX3edc");
@@ -22,7 +22,7 @@ public class RegisterTest extends BaseTest {
     }
 
     @Test
-    public void registerWithInvalidPasswordTest(){
+    public void registerWithInvalidPasswordTest() {
         loginSteps.navigateToLoginPage();
         registerSteps.setRegisterUserEmail("abc@test.ro");
         registerSteps.setRegisterPassword("1");
@@ -30,15 +30,16 @@ public class RegisterTest extends BaseTest {
     }
 
     @Test
-    public void registerWithAlreadyUsedEmailTest(){
+    public void registerWithAlreadyUsedEmailTest() {
         loginSteps.navigateToLoginPage();
         registerSteps.setRegisterUserEmail("abc@test.ro");
         registerSteps.setRegisterPassword("1qaz@WSX3edc");
         registerSteps.clickOnRegisterButton();
         registerSteps.assertAlreadyUsedEmailRegistration();
     }
+
     @Test
-    public void registerWithInvalidEmailTest(){
+    public void registerWithInvalidEmailTest() {
 
     }
 }
