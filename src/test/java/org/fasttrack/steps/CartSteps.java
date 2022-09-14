@@ -13,10 +13,15 @@ public class CartSteps extends BaseSteps {
     }
 
     @Step
-    public void checkSuccessMessage(String productName) {
-        Assert.assertEquals((productName + " was added to your shopping cart.").toLowerCase(),
-                cartPage.checkSuccessMessage().toString().toLowerCase());
+    public void checkCart() {
+        homePage.clickMyCartButton();
     }
+
+    //@Step
+    // public void checkSuccessMessage(String productName) {
+    //   Assert.assertEquals((productName + " was added to your shopping cart.").toLowerCase(),
+    //      cartPage.checkSuccessMessage().toString().toLowerCase());
+    // }
 
     @Step
     public void checkSubtotalPrice() {

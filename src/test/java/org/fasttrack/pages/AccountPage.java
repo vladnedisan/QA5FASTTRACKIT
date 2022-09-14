@@ -20,7 +20,7 @@ public class AccountPage extends BasePage {
     @FindBy(css = "#user_login")
     private WebElementFacade lostPasswordTextField;
 
-    @FindBy (css = "#post-7 > div > div > div > div > form > p:nth-child(4) > button")
+    @FindBy(css = "#post-7 > div > div > div > div > form > p:nth-child(4) > button")
     private WebElementFacade resetButton;
 
     @FindBy (id= "reg_email")
@@ -55,17 +55,20 @@ public class AccountPage extends BasePage {
     public void clickLostPasswordButton() {
         clickOn(lostPasswordButton);
     }
-    public void clickResetButton(){
+
+    public void clickResetButton() {
         clickOn(resetButton);
     }
 
     public String getWelcomeText() {
         return welcomeTextElement.getText();
     }
+
     public void setUsernameField(String value) {
         typeInto(usernameField, value);
     }
-    public void setLostPasswordTextField( String value) {
+
+    public void setLostPasswordTextField(String value) {
         typeInto(lostPasswordTextField, value);
     }
     public void setEmailRegisterField(String value){

@@ -8,17 +8,18 @@ public class CartTest extends BaseTest {
     @Test
     public void loginAndAddToCartTest() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
-        searchSteps.navigateToProductName("SILVER DESERT NECKLACE");
+        searchSteps.navigateToProductName("Beanie");
         cartSteps.addProductToCart();
+        cartSteps.checkCart();
     }
 
-    @Test
-    public void checkTotalAndSubtotalTest() {
-        searchSteps.navigateToProductName("SILVER DESERT NECKLACE");
-        cartSteps.addProductToCart();
-        cartSteps.checkSuccessMessage("SILVER DESERT NECKLACE");
+    //  @Test
+    //  public void checkTotalAndSubtotalTest() {
+    //      searchSteps.navigateToProductName("SILVER DESERT NECKLACE");
+    //      cartSteps.addProductToCart();
+    //      cartSteps.checkSuccessMessage("SILVER DESERT NECKLACE");
 
-        cartSteps.checkSubtotalPrice();
-        cartSteps.checkTotalPrice();
-    }
+    //      cartSteps.checkSubtotalPrice();
+    //      cartSteps.checkTotalPrice();
+    //  }
 }

@@ -26,6 +26,9 @@ public class HomePage extends PageObject {
     @FindBy(css = "#mastheads > div.top-header.clearfix > div > div.headertwo-wrap > div.search-form > form > button")
     private WebElementFacade searchButton;
 
+    @FindBy (css = "#mastheads > div.top-header.clearfix > div > div.headertwo-wrap > div.view-cart > a > i")
+    private WebElementFacade viewMyCartButton;
+
     public void clickAccountLink() {
         clickOn(accountLink);
     }
@@ -34,12 +37,18 @@ public class HomePage extends PageObject {
         clickOn(loginLink);
     }
 
-    public void clickLostPassword() { clickOn(lostPassword);}
+    public void clickLostPassword() {
+        clickOn(lostPassword);
+    }
+
     public void setSearchField(String value) {
         typeInto(searchField, value);
     }
 
     public void clickSearchButton() {
         clickOn(searchButton);
+    }
+    public void clickMyCartButton(){
+        clickOn(viewMyCartButton);
     }
 }

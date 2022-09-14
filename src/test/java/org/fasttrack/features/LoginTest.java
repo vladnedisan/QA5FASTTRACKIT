@@ -50,6 +50,25 @@ public class LoginTest extends BaseTest {
         loginSteps.setLostPasswordField(Constants.LOSTUSER_EMAIL + "a");
         loginSteps.clickResetPassword();
         loginSteps.verifyErrorMessageInvalidUsernameOrEmail();
+    }
 
+    @Test
+    public void checkRememberMeBoxTest() {
+        loginSteps.navigateToLoginPage();
+        loginSteps.setUserEmail(Constants.USER_EMAIL);
+        loginSteps.setPassword(Constants.USER_PASS);
+       //registerSteps.clickOnsetRememberMeCheckBox();
+        loginSteps.clickLogin();
+        loginSteps.navigateToLoginPage();
+        //loginSteps.verifyUserIsLoggedIn(Constants.USER_NAME);
+    }
+
+    @Test
+    public void loginWithValidCredentialsAsAdminTest() {
+        loginSteps.navigateToLoginPage();
+        loginSteps.setUserEmail(Constants.ADMINUSER_NAME);
+        loginSteps.setPassword(Constants.ADMINUSER_PASS);
+        loginSteps.clickLogin();
+        loginSteps.verifyUserIsLoggedIn(Constants.ADMINUSER_NAME);
     }
 }
