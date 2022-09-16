@@ -36,6 +36,10 @@ public class CartPage extends BasePage {
     @FindBy(css = "tfoot .price")
     private WebElementFacade totalCartPrice;
 
+    @FindBy(css = "#post-5 > div > div > div > div > form > table > tbody > tr:nth-child(2) > td > button")
+    private WebElementFacade updateCart;
+
+
     public String checkSuccessMessage() {
         return successMessage.getText();
     }
@@ -73,6 +77,9 @@ public class CartPage extends BasePage {
         quantityValue.sendKeys(val);
         quantityValue.getAttribute("value");
         Assert.assertEquals(quantityValue.getAttribute("value"), val);
+    }
+    public void clickUpdateCart(){
+        clickOn(updateCart);
     }
 
     public int getProductsSubtotal() {

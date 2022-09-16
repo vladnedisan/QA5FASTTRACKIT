@@ -39,6 +39,10 @@ public class CartSteps extends BaseSteps {
         cartPage.decreaseProductQuantity();
         waitABit(3000);
     }
+    public void updateCart(){
+        cartPage.clickUpdateCart();
+        waitABit(3000);
+    }
 
     @Step
     public void checkSubtotalPrice() {
