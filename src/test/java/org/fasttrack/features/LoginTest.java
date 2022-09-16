@@ -64,10 +64,10 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void loginWithValidCredentialsAsAdminTest() {
-        loginSteps.navigateToLoginPage();
-        loginSteps.setUserEmail(Constants.ADMINUSER_NAME);
-        loginSteps.setPassword(Constants.ADMINUSER_PASS);
-        loginSteps.clickLogin();
+        driver.get(Constants.ADMIN_BASE_URL);
+        loginSteps.setAdminUsername(Constants.ADMINUSER_NAME);
+        loginSteps.setAdminPassword(Constants.ADMINUSER_PASS);
+        loginSteps.clickAdminLogin();
         loginSteps.verifyUserIsLoggedIn(Constants.ADMINUSER_NAME);
     }
 }
