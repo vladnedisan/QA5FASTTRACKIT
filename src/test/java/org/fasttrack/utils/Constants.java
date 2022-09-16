@@ -10,4 +10,5 @@ public class Constants {
     public static final String BASE_URL = "http://qa5.fasttrackit.org:8008/";
 
     public static final String PRODUCT_NOT_FOUND = "Product not found!";
+    public static final String ADMIN_BASE_URL = "http://qa5.fasttrackit.org:8008/wp-login.php";
 }

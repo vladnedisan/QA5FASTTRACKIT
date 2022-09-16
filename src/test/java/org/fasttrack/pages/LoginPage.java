@@ -23,6 +23,14 @@ public class LoginPage extends PageObject {
     @FindBy(css = "#post-7 > div > div > div > div > ul > li")
     private WebElementFacade notificationResetPasswordInvalidUsernameOrEmail;
 
+    @FindBy(id="user_login")
+    private WebElementFacade adminUserField;
+
+    @FindBy(id="user_pass")
+    private WebElementFacade adminPassField;
+    @FindBy(css="#wp-submit")
+    private WebElementFacade adminLoginButton;
+
     public void setEmailField(String value) {
         typeInto(emailField, value);
     }
@@ -45,6 +53,16 @@ public class LoginPage extends PageObject {
 
     public String getNotificationMessageInvalidUsernameOrEmail() {
         return notificationResetPasswordInvalidUsernameOrEmail.getText();
+    }
+
+    public void setAdminUserField(String value){
+        typeInto(adminUserField,value);
+    }
+    public void setAdminPassField(String value){
+        typeInto(adminPassField,value);
+    }
+    public void clickAdminLoginButton(){
+        clickOn(adminLoginButton);
     }
 
 }

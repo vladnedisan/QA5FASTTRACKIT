@@ -56,6 +56,18 @@ public class LoginSteps extends BaseSteps {
     public void setLostPasswordField(String value) {
         accountPage.setLostPasswordTextField(value);
     }
+    @Step
+    public void setAdminUsername(String value){
+        loginPage.setAdminUserField(value);
+    }
+    @Step
+    public void setAdminPassword(String value){
+        loginPage.setAdminPassField(value);
+    }
+    @Step
+    public void clickAdminLogin(){
+        loginPage.clickAdminLoginButton();
+    }
 
     @Step
     public void verifyUserNotLoggedInPassword() {
