@@ -17,6 +17,11 @@ public class CartSteps extends BaseSteps {
 
     }
     @Step
+    public void clickProceedToCheckoutButton(){
+        cartPage.clickCheckoutButton();
+
+    }
+    @Step
     public void checkCart() {
         homePage.clickMyCartButton();
         waitABit(3000);

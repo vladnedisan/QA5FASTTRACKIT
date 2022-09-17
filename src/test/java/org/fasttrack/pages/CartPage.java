@@ -18,7 +18,7 @@ public class CartPage extends BasePage {
     @FindBy(css = "#post-5 > div > div > div > div.woocommerce > p.cart-empty")
     private WebElementFacade cartIsEmptyMessage;
 
-    @FindBy (css = "#primary > div > div.woocommerce-message")
+    @FindBy(css = "#primary > div > div.woocommerce-message")
     private WebElementFacade addToCartMessage;
 
     @FindBy(id = "quantity_63222d1063b87")
@@ -45,6 +45,12 @@ public class CartPage extends BasePage {
     @FindBy(css = "#post-5 > div > div > div > div > form > table > tbody > tr:nth-child(2) > td > button")
     private WebElementFacade updateCart;
 
+    @FindBy(css = " #post-5 > div > div > div > div > div > div > div > a")
+    private WebElementFacade checkOutButton;
+
+    public void clickCheckoutButton() {
+        clickOn(checkOutButton);
+    }
 
     public String checkSuccessMessage() {
         return successMessage.getText();
@@ -57,9 +63,11 @@ public class CartPage extends BasePage {
     public String checkCartIsEmptyMessage() {
         return cartIsEmptyMessage.getText();
     }
-    public String  checkAddToCartMessage(){
+
+    public String checkAddToCartMessage() {
         return addToCartMessage.getText();
     }
+
     public void increaseProductQuantity() {
         changeProductQuantity(1);
     }
