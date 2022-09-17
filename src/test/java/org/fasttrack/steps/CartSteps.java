@@ -11,16 +11,34 @@ public class CartSteps extends BaseSteps {
         productPage.clickAddToCart();
 
     }
+
     @Step
-        public void AddProductToCartBeanieWithLogo (){
+    public void AddProductToCartBeanieWithLogo() {
         productPage.clickAddToCartBeanieWithLogo();
 
     }
-    @Step
-    public void clickProceedToCheckoutButton(){
-        cartPage.clickCheckoutButton();
 
+    @Step
+    public void clickProceedToCheckoutButton() {
+        cartPage.clickCheckoutButton();
     }
+
+    @Step
+    public void applyInvalidCoupon() {
+        cartPage.enterInvalidCouponInTextField();
+    }
+
+    @Step
+    public void applyValidCoupon() {
+        cartPage.enterValidCouponInTextField();
+    }
+
+    @Step
+    public void clickApplyCoupon() {
+        cartPage.clickApplyCouponButton();
+        waitABit(3000);
+    }
+
     @Step
     public void checkCart() {
         homePage.clickMyCartButton();
@@ -37,10 +55,27 @@ public class CartSteps extends BaseSteps {
     public void verifyCartIsEmptyMessage() {
         Assert.assertEquals("Your cart is currently empty.", cartPage.checkCartIsEmptyMessage());
     }
-     @Step
-     public void verifyAddToCartMessageIsDisplayed(){
-        Assert.assertEquals("View cart" +'\n'+"“Beanie with Logo” has been added to your cart.", cartPage.checkAddToCartMessage());
-     }
+
+    @Step
+    public void verifyAddToCartMessageIsDisplayed() {
+        Assert.assertEquals("View cart" + '\n' + "“Beanie with Logo” has been added to your cart.", cartPage.checkAddToCartMessage());
+    }
+
+    @Step
+    public void verifyTextOfInvalidCouponAppliedTest() {
+        Assert.assertEquals("Coupon \"percentaje\" does not exist!", cartPage.checkAppliedInvalidCouponText());
+    }
+
+    @Step
+    public void verifyTextOfValidCouponAllpiedTest() {
+        Assert.assertEquals("Coupon code applied successfully.", cartPage.checkAppliedValidCouponText());
+    }
+
+    @Step
+    public void verifyTextOfValidCouponReappliedTest() {
+        Assert.assertEquals("Coupon code already applied!", cartPage.checkReappliedValidCouponText());
+    }
+
     @Step
     public void increaseQuantityInCart() {
         cartPage.increaseProductQuantity();
@@ -51,10 +86,12 @@ public class CartSteps extends BaseSteps {
         cartPage.decreaseProductQuantity();
         waitABit(3000);
     }
-    public void updateCart(){
+
+    public void updateCart() {
         cartPage.clickUpdateCart();
         waitABit(3000);
     }
+
     public void emptyCart() throws InterruptedException {
         cartPage.removeProducts();
     }

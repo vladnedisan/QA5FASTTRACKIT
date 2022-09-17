@@ -48,8 +48,42 @@ public class CartPage extends BasePage {
     @FindBy(css = " #post-5 > div > div > div > div > div > div > div > a")
     private WebElementFacade checkOutButton;
 
+    @FindBy(css = "#coupon_code")
+    private WebElementFacade couponTextField;
+
+    @FindBy(css = "#post-5 > div > div > div > div > form > table > tbody > tr:nth-child(2) > td > div > input.button")
+    private WebElementFacade applyCouponButton;
+    @FindBy(css = "#post-5 > div > div > div > div > ul > li")
+    private WebElementFacade checkAppliedInvalidCouponText;
+
+    @FindBy(css = "#post-5 > div > div > div > div > div.woocommerce-message")
+    private WebElementFacade getCheckAppliedValidCouponText;
+
+    @FindBy(css = "#post-5 > div > div > div > div > ul > li")
+    private WebElementFacade getCheckReappliedValidCouponText;
+
+    public String checkReappliedValidCouponText(){
+        return  getCheckReappliedValidCouponText.getText();
+    }
     public void clickCheckoutButton() {
         clickOn(checkOutButton);
+    }
+
+    public String checkAppliedValidCouponText() {
+        return getCheckAppliedValidCouponText.getText();
+
+    }
+
+    public void clickApplyCouponButton() {
+        clickOn(applyCouponButton);
+    }
+
+    public void enterInvalidCouponInTextField() {
+        couponTextField.sendKeys("percentaje");
+    }
+
+    public void enterValidCouponInTextField() {
+        couponTextField.sendKeys("percentage25");
     }
 
     public String checkSuccessMessage() {
@@ -66,6 +100,10 @@ public class CartPage extends BasePage {
 
     public String checkAddToCartMessage() {
         return addToCartMessage.getText();
+    }
+
+    public String checkAppliedInvalidCouponText() {
+        return checkAppliedInvalidCouponText.getText();
     }
 
     public void increaseProductQuantity() {

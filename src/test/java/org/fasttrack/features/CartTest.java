@@ -85,6 +85,38 @@ public class CartTest extends BaseTest {
         cartSteps.checkCart();
         cartSteps.clickProceedToCheckoutButton();
     }
+    @Test
+    public void applyInvalidCouponTest() {
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.navigateToProductName("Beanie with Logo");
+        cartSteps.AddProductToCartBeanieWithLogo();
+        cartSteps.checkCart();
+        cartSteps.applyInvalidCoupon();
+        cartSteps.clickApplyCoupon();
+        cartSteps.verifyTextOfInvalidCouponAppliedTest();
+    }
+    @Test
+    public void applyValidCouponTest() {
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.navigateToProductName("Beanie with Logo");
+        cartSteps.AddProductToCartBeanieWithLogo();
+        cartSteps.checkCart();
+        cartSteps.applyValidCoupon();
+        cartSteps.clickApplyCoupon();
+        cartSteps.verifyTextOfValidCouponAllpiedTest();
+    }
+
+    @Test
+    public void reapplyValidCouponTest() {
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.navigateToProductName("Beanie with Logo");
+        cartSteps.AddProductToCartBeanieWithLogo();
+        cartSteps.checkCart();
+        cartSteps.applyValidCoupon();
+        cartSteps.clickApplyCoupon();
+        cartSteps.verifyTextOfValidCouponReappliedTest();
+    }
+
 
 //  @Test
 //  public void checkTotalAndSubtotalTest() {
