@@ -11,7 +11,11 @@ public class CartSteps extends BaseSteps {
         productPage.clickAddToCart();
 
     }
+    @Step
+        public void AddProductToCartBeanieWithLogo (){
+        productPage.clickAddToCartBeanieWithLogo();
 
+    }
     @Step
     public void checkCart() {
         homePage.clickMyCartButton();
@@ -26,9 +30,12 @@ public class CartSteps extends BaseSteps {
 
     @Step
     public void verifyCartIsEmptyMessage() {
-        Assert.assertEquals("Your cart is currently empty.", cartPage.checkCartIsEmptyMessage());
+        Assert.assertEquals("Your art is currently empty.", cartPage.checkCartIsEmptyMessage());
     }
-
+     @Step
+     public void verifyAddToCartMessageIsDisplayed(){
+        Assert.assertEquals("View cart" +'\n'+"“Beanie with Logo” has been added to your cart.", cartPage.checkAddToCartMessage());
+     }
     @Step
     public void increaseQuantityInCart() {
         cartPage.increaseProductQuantity();

@@ -18,6 +18,9 @@ public class CartPage extends BasePage {
     @FindBy(css = "#post-5 > div > div > div > div.woocommerce > p.cart-empty")
     private WebElementFacade cartIsEmptyMessage;
 
+    @FindBy (css = "#primary > div > div.woocommerce-message")
+    private WebElementFacade addToCartMessage;
+
     @FindBy(id = "quantity_63222d1063b87")
     private WebElementFacade productQuantityTextField;
 
@@ -54,7 +57,9 @@ public class CartPage extends BasePage {
     public String checkCartIsEmptyMessage() {
         return cartIsEmptyMessage.getText();
     }
-
+    public String  checkAddToCartMessage(){
+        return addToCartMessage.getText();
+    }
     public void increaseProductQuantity() {
         changeProductQuantity(1);
     }

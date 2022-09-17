@@ -67,6 +67,14 @@ public class CartTest extends BaseTest {
         cartSteps.emptyCart();
         cartSteps.verifyCartIsEmptyMessage();
     }
+    @Test
+    public void checkSuccessMessageIsDisplayedWhenAProductIsAddedToCartTest (){
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.navigateToProductName("Beanie with Logo");
+        cartSteps.AddProductToCartBeanieWithLogo();
+        cartSteps.verifyAddToCartMessageIsDisplayed();
+
+    }
     //  @Test
     //  public void checkTotalAndSubtotalTest() {
     //      searchSteps.navigateToProductName("SILVER DESERT NECKLACE");
