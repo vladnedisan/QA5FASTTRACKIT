@@ -1,4 +1,10 @@
 package org.fasttrack.steps;
 
-public class CheckoutSteps {
+import net.thucydides.core.annotations.Step;
+
+public class CheckoutSteps extends BaseSteps {
+    @Step
+    public void clickPlaceOrderButton() {
+        checkoutPage.clickPlaceOrdertButton();
+    }
 }

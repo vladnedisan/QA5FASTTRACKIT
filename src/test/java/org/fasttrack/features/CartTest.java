@@ -60,6 +60,7 @@ public class CartTest extends BaseTest {
         cartSteps.increaseQuantityInCart();
         cartSteps.updateCart();
     }
+
     @Test
     public void removeAllItemsFromCartAndCheckCartIfItIsEmptyTest() throws InterruptedException {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
@@ -67,20 +68,30 @@ public class CartTest extends BaseTest {
         cartSteps.emptyCart();
         cartSteps.verifyCartIsEmptyMessage();
     }
+
     @Test
-    public void checkSuccessMessageIsDisplayedWhenAProductIsAddedToCartTest (){
+    public void checkSuccessMessageIsDisplayedWhenAProductIsAddedToCartTest() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
         searchSteps.navigateToProductName("Beanie with Logo");
         cartSteps.AddProductToCartBeanieWithLogo();
         cartSteps.verifyAddToCartMessageIsDisplayed();
-
     }
-    //  @Test
-    //  public void checkTotalAndSubtotalTest() {
-    //      searchSteps.navigateToProductName("SILVER DESERT NECKLACE");
-    //      cartSteps.addProductToCart();
-    //      cartSteps.checkSuccessMessage("SILVER DESERT NECKLACE");
-    //      cartSteps.checkSubtotalPrice();
-    //      cartSteps.checkTotalPrice();
-    //  }
+
+    @Test
+    public void clickOnProceedToCheckOutButtonTest() {
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.navigateToProductName("Beanie with Logo");
+        cartSteps.AddProductToCartBeanieWithLogo();
+        cartSteps.checkCart();
+        cartSteps.clickProceedToCheckoutButton();
+    }
+
+//  @Test
+//  public void checkTotalAndSubtotalTest() {
+//      searchSteps.navigateToProductName("SILVER DESERT NECKLACE");
+//      cartSteps.addProductToCart();
+//      cartSteps.checkSuccessMessage("SILVER DESERT NECKLACE");
+//      cartSteps.checkSubtotalPrice();
+//      cartSteps.checkTotalPrice();
+//  }
 }
