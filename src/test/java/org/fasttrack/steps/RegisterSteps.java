@@ -1,7 +1,6 @@
 package org.fasttrack.steps;
 
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
 
 public class RegisterSteps extends BaseSteps {
@@ -32,12 +31,12 @@ public class RegisterSteps extends BaseSteps {
     }
 
     @Step
-    public boolean assertValidRegistration() {
-        return accountPage.getLogoutLink();
+    public void assertValidRegistration() {
+        accountPage.getLogoutLink();
     }
 
     @Step
-    public boolean assertAlreadyUsedEmailRegistration() {
-        return accountPage.getAlreadyRegisteredEmailAddressText();
+    public void assertAlreadyUsedEmailRegistration() {
+        accountPage.getAlreadyRegisteredEmailAddressText();
     }
 }

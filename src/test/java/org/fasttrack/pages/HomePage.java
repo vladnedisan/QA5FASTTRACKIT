@@ -44,6 +44,12 @@ public class HomePage extends PageObject {
     public void setSearchField(String value) {
         typeInto(searchField, value);
     }
+    public boolean searchFieldIsDisplayed (){
+        return searchField.isDisplayed();
+    }
+    public boolean searchButtonIsClickable (){
+        return searchButton.isClickable();
+    }
 
     public void clickSearchButton() {
         clickOn(searchButton);
