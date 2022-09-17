@@ -10,11 +10,33 @@ public class SearchSteps extends BaseSteps {
         homePage.setSearchField(keyword);
         homePage.clickSearchButton();
     }
+    @Step
+    public void assertSearchResultText(String value){
+        Assert.assertEquals(value,searchResultsPage.getSearchResultsText());
+    }
 
+    @Step
+    public void assertSearchFieldIsDisplayed(){
+        Assert.assertTrue(homePage.searchFieldIsDisplayed());
+    }
+    @Step
+    public void assertSearchButtonIsClickable(){
+        Assert.assertTrue(homePage.searchButtonIsClickable());
+    }
+    @Step
+    public void searchResultsTitleTextIsRelevantToSearchKeyword(String value){
+        searchResultsPage.getsearchResultsTitleText().contains(value);
+    }
+    @Step
+    public void assertSearchResultsTitleTextIsRelevantToSearchKeyword(){
+
+    }
     @Step
     public void navigateToProductName(String productName) {
         searchForKeyword(productName);
         //findProductWithNameInListAndOpen(productName);
     }
+
+
 
 }

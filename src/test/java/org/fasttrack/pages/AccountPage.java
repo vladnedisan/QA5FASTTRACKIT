@@ -92,14 +92,12 @@ public class AccountPage extends BasePage {
         return missingEmailAddressText.getText();
     }
 
-    public boolean getLogoutLink() {
+    public void getLogoutLink() {
         shouldBeVisible(logoutLink);
-        return true;
     }
 
-    public boolean getAlreadyRegisteredEmailAddressText() {
+    public void getAlreadyRegisteredEmailAddressText() {
         shouldBeVisible(alreadyRegisteredEmailAddressText);
-        return true;
     }
 
     public void setRememberMeCheckBox() {

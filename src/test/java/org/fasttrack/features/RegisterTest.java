@@ -40,6 +40,6 @@ public class RegisterTest extends BaseTest {
 
     @Test
     public void registerWithInvalidEmailTest() {
-
+        //cannot access element for invalid email -> browser generated
     }
 }
