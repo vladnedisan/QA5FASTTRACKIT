@@ -43,6 +43,9 @@ public class CartSteps extends BaseSteps {
         cartPage.clickUpdateCart();
         waitABit(3000);
     }
+    public void emptyCart() throws InterruptedException {
+        cartPage.removeProducts();
+    }
 
     @Step
     public void checkSubtotalPrice() {

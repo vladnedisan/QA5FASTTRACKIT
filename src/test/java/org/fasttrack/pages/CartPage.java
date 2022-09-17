@@ -27,6 +27,9 @@ public class CartPage extends BasePage {
     @FindBy(css = ".product-cart-total")
     private List<WebElementFacade> subtotalProductList;
 
+    @FindBy(css = "[class='woocommerce-cart-form__cart-item cart_item'] [class='product-remove'] [class='remove']")
+    private List<WebElementFacade> removeProductsList;
+
     @FindBy(css = "tbody tr:first-child .a-right .price")
     private WebElementFacade subtotalCartPrice;
 
@@ -78,9 +81,21 @@ public class CartPage extends BasePage {
         quantityValue.getAttribute("value");
         Assert.assertEquals(quantityValue.getAttribute("value"), val);
     }
-    public void clickUpdateCart(){
+
+    public void clickUpdateCart() {
         clickOn(updateCart);
     }
+
+    public void removeProducts() throws InterruptedException {
+        while (removeProductsList.size() > 0) {
+            for (int i = 1; i < removeProductsList.size(); i++) {
+                Thread.sleep(2000);
+                removeProductsList.get(0).click();
+            }
+        }
+
+    }
+
 
     public int getProductsSubtotal() {
         int sum = 0;

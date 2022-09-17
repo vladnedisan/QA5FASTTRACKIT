@@ -51,7 +51,22 @@ public class CartTest extends BaseTest {
         cartSteps.updateCart();
     }
 
-
+    @Test
+    public void updateCartAfterIncreaseQuantityInCartListTest() {
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.navigateToProductName("Beanie");
+        cartSteps.addProductToCart();
+        cartSteps.checkCart();
+        cartSteps.increaseQuantityInCart();
+        cartSteps.updateCart();
+    }
+    @Test
+    public void removeAllItemsFromCartAndCheckCartIfItIsEmptyTest() throws InterruptedException {
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        cartSteps.checkCart();
+        cartSteps.emptyCart();
+        cartSteps.verifyCartIsEmptyMessage();
+    }
     //  @Test
     //  public void checkTotalAndSubtotalTest() {
     //      searchSteps.navigateToProductName("SILVER DESERT NECKLACE");
