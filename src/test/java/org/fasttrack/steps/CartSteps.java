@@ -35,7 +35,7 @@ public class CartSteps extends BaseSteps {
 
     @Step
     public void verifyCartIsEmptyMessage() {
-        Assert.assertEquals("Your art is currently empty.", cartPage.checkCartIsEmptyMessage());
+        Assert.assertEquals("Your cart is currently empty.", cartPage.checkCartIsEmptyMessage());
     }
      @Step
      public void verifyAddToCartMessageIsDisplayed(){
