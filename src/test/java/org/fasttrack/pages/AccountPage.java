@@ -95,6 +95,9 @@ public class AccountPage extends BasePage {
     public void getLogoutLink() {
         shouldBeVisible(logoutLink);
     }
+    public void clickLogoutLink(){
+        clickOn(logoutLink);
+    }
 
     public void getAlreadyRegisteredEmailAddressText() {
         shouldBeVisible(alreadyRegisteredEmailAddressText);

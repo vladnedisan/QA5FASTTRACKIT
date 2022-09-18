@@ -58,4 +58,7 @@ public class HomePage extends PageObject {
     public void clickMyCartButton() {
         clickOn(viewMyCartButton);
     }
+    public boolean loginLinkIsDisplayed(){
+        return loginLink.isDisplayed();
+    }
 }

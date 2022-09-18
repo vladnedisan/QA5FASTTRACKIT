@@ -36,6 +36,10 @@ public class LoginSteps extends BaseSteps {
     public void clickLogin() {
         accountPage.clickLoginButton();
     }
+    @Step
+    public void clickLogout(){
+        accountPage.clickLogoutLink();
+    }
 
     @Step
     public void clickLostPassword() {
@@ -71,6 +75,10 @@ public class LoginSteps extends BaseSteps {
     @Step
     public void assertWPLogoutlinkIsDisplayed(){
         Assert.assertTrue(wpHomePage.wpLogoutlinkIsDisplayed());
+    }
+    @Step
+    public void assertLoginlinkIsDisplayed(){
+        Assert.assertTrue(homePage.loginLinkIsDisplayed());
     }
 
     @Step
