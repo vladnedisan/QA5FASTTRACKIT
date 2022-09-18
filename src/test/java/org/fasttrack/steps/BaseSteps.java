@@ -13,4 +13,5 @@ public class BaseSteps extends ScenarioSteps {
     protected CartPage cartPage;
     protected CheckoutPage checkoutPage;
     protected ProductPage productPage;
+    protected WPHomePage wpHomePage;
 }

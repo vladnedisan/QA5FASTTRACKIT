@@ -25,7 +25,7 @@ public class SearchSteps extends BaseSteps {
     }
     @Step
     public void searchResultsTitleTextIsRelevantToSearchKeyword(String value){
-        searchResultsPage.getsearchResultsTitleText().contains(value);
+        searchResultsPage.getSearchResultsTitleText().contains(value);
     }
     @Step
     public void assertSearchResultsTitleTextIsRelevantToSearchKeyword(){

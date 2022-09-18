@@ -68,6 +68,10 @@ public class LoginSteps extends BaseSteps {
     public void clickAdminLogin(){
         loginPage.clickAdminLoginButton();
     }
+    @Step
+    public void assertWPLogoutlinkIsDisplayed(){
+        Assert.assertTrue(wpHomePage.wpLogoutlinkIsDisplayed());
+    }
 
     @Step
     public void verifyUserNotLoggedInPassword() {

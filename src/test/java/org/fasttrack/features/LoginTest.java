@@ -68,6 +68,6 @@ public class LoginTest extends BaseTest {
         loginSteps.setAdminUsername(Constants.ADMINUSER_NAME);
         loginSteps.setAdminPassword(Constants.ADMINUSER_PASS);
         loginSteps.clickAdminLogin();
-        loginSteps.verifyUserIsLoggedIn(Constants.ADMINUSER_NAME);
+        loginSteps.assertWPLogoutlinkIsDisplayed();
     }
 }

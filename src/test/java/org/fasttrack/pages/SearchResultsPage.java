@@ -19,7 +19,7 @@ public class SearchResultsPage extends PageObject {
     public Object getSearchResultsText (){
         return searchResultsText.getText();
     }
-    public String getsearchResultsTitleText(){
+    public String getSearchResultsTitleText(){
         return searchResultsTitleText.getText();
     }
 
