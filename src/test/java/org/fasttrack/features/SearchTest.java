@@ -40,9 +40,10 @@ public class SearchTest extends BaseTest {
         searchSteps.searchForKeyword(keywordSearch);
         searchSteps.assertSearchResultText(("Search results: " + "“" + keywordSearch + "”").toUpperCase());
     }
+
     @Test
     public void maxRangeCharacterSearchTest() {
-        String keywordSearch = StringUtils.repeat("maxRangeCharacterSearchTest",60);
+        String keywordSearch = StringUtils.repeat("maxRangeCharacterSearchTest", 60);
         searchSteps.searchForKeyword(keywordSearch);
         searchSteps.assertSearchResultText(("Search results: " + "“" + "”").toUpperCase());
     }

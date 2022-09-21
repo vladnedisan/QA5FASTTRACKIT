@@ -64,8 +64,13 @@ public class CartTest extends BaseTest {
     @Test
     public void removeAllItemsFromCartAndCheckCartIfItIsEmptyTest() throws InterruptedException {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+       // searchSteps.navigateToProductName("Beanie");
+       // cartSteps.addProductToCart();
+        System.out.println(1);
         cartSteps.checkCart();
+        System.out.println(2);
         cartSteps.emptyCart();
+        System.out.println(3);
         cartSteps.verifyCartIsEmptyMessage();
     }
 
@@ -85,6 +90,7 @@ public class CartTest extends BaseTest {
         cartSteps.checkCart();
         cartSteps.clickProceedToCheckoutButton();
     }
+
     @Test
     public void applyInvalidCouponTest() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
@@ -95,6 +101,7 @@ public class CartTest extends BaseTest {
         cartSteps.clickApplyCoupon();
         cartSteps.verifyTextOfInvalidCouponAppliedTest();
     }
+
     @Test
     public void applyValidCouponTest() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);

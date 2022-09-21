@@ -14,6 +14,7 @@ public class CheckoutTest extends BaseTest {
         cartSteps.clickProceedToCheckoutButton();
         checkoutSteps.clickPlaceOrderButton();
     }
+
     @Test
     public void removeAppliedValidCouponTest() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);

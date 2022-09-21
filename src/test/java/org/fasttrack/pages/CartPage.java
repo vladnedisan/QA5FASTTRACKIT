@@ -62,9 +62,10 @@ public class CartPage extends BasePage {
     @FindBy(css = "#post-5 > div > div > div > div > ul > li")
     private WebElementFacade getCheckReappliedValidCouponText;
 
-    public String checkReappliedValidCouponText(){
-        return  getCheckReappliedValidCouponText.getText();
+    public String checkReappliedValidCouponText() {
+        return getCheckReappliedValidCouponText.getText();
     }
+
     public void clickCheckoutButton() {
         clickOn(checkOutButton);
     }
@@ -137,15 +138,12 @@ public class CartPage extends BasePage {
         clickOn(updateCart);
     }
 
-    public void removeProducts() throws InterruptedException {
-        while (removeProductsList.size() > 0) {
-            for (int i = 1; i < removeProductsList.size(); i++) {
-                Thread.sleep(2000);
+    public void removeProducts() {
+        if (removeProductsList.size() > 0) {
+            for (int i = 1; i <= removeProductsList.size(); i++) {
                 removeProductsList.get(0).click();
             }
         }
-
-
     }
 
 

@@ -92,7 +92,7 @@ public class CartSteps extends BaseSteps {
         waitABit(3000);
     }
 
-    public void emptyCart() throws InterruptedException {
+    public void emptyCart()  {
         cartPage.removeProducts();
     }
 
