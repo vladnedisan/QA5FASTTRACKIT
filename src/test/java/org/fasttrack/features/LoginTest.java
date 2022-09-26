@@ -59,7 +59,6 @@ public class LoginTest extends BaseTest {
         loginSteps.clickCheckRememberMeCheckBox();
         loginSteps.clickLogin();
         loginSteps.navigateToLoginPage();
-        // loginSteps.verifyUserIsLoggedIn(Constants.USER_NAME);
     }
 
     @Test

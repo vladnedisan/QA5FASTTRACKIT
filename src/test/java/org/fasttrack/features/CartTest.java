@@ -64,13 +64,8 @@ public class CartTest extends BaseTest {
     @Test
     public void removeAllItemsFromCartAndCheckCartIfItIsEmptyTest() throws InterruptedException {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
-       // searchSteps.navigateToProductName("Beanie");
-       // cartSteps.addProductToCart();
-        System.out.println(1);
         cartSteps.checkCart();
-        System.out.println(2);
         cartSteps.emptyCart();
-        System.out.println(3);
         cartSteps.verifyCartIsEmptyMessage();
     }
 
@@ -114,6 +109,17 @@ public class CartTest extends BaseTest {
     }
 
     @Test
+    public void deleteAppliedValidCoupon() {
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        searchSteps.navigateToProductName("Beanie with Logo");
+        cartSteps.AddProductToCartBeanieWithLogo();
+        cartSteps.checkCart();
+        cartSteps.clickProceedToCheckoutButton();
+        checkoutSteps.clickRemoveCouponButton();
+        checkoutSteps.verifyTextOfValidCouponRemovedText();
+    }
+
+    @Test
     public void reapplyValidCouponTest() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASS);
         searchSteps.navigateToProductName("Beanie with Logo");
@@ -121,16 +127,11 @@ public class CartTest extends BaseTest {
         cartSteps.checkCart();
         cartSteps.applyValidCoupon();
         cartSteps.clickApplyCoupon();
+        cartSteps.applyValidCoupon();
+        cartSteps.clickApplyCoupon();
         cartSteps.verifyTextOfValidCouponReappliedTest();
+        cartSteps.checkCart();
+        cartSteps.clickProceedToCheckoutButton();
+        checkoutSteps.clickRemoveCouponButton();
     }
-
-
-//  @Test
-//  public void checkTotalAndSubtotalTest() {
-//      searchSteps.navigateToProductName("SILVER DESERT NECKLACE");
-//      cartSteps.addProductToCart();
-//      cartSteps.checkSuccessMessage("SILVER DESERT NECKLACE");
-//      cartSteps.checkSubtotalPrice();
-//      cartSteps.checkTotalPrice();
-//  }
 }

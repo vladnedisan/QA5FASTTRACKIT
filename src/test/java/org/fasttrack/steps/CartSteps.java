@@ -92,19 +92,9 @@ public class CartSteps extends BaseSteps {
         waitABit(3000);
     }
 
-    public void emptyCart()  {
+    public void emptyCart() {
         cartPage.removeProducts();
     }
 
-    @Step
-    public void checkSubtotalPrice() {
-        waitABit(2000);
-        Assert.assertTrue(cartPage.checkIfSubtotalMatches());
-    }
 
-    @Step
-    public void checkTotalPrice() {
-        waitABit(2000);
-        Assert.assertTrue(cartPage.checkIfTotalPriceMatches());
-    }
 }

@@ -146,26 +146,5 @@ public class CartPage extends BasePage {
         }
     }
 
-
-    public int getProductsSubtotal() {
-        int sum = 0;
-        for (WebElementFacade elementFacade : subtotalProductList) {
-            sum += convertStringToInteger(elementFacade.getText());
-        }
-        return sum;
-    }
-
-    public boolean checkIfSubtotalMatches() {
-        int expected = getProductsSubtotal();
-        int actual = convertStringToInteger(subtotalCartPrice.getText());
-        return expected == actual;
-    }
-
-    public boolean checkIfTotalPriceMatches() {
-        int subtotal = getProductsSubtotal();
-        int fee = convertStringToInteger(taxPrice.getText());
-        int expectedTotal = subtotal + fee;
-        int actualTotal = convertStringToInteger(totalCartPrice.getText());
-        return expectedTotal == actualTotal;
-    }
 }
+
