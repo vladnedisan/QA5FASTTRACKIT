@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class Constants {
     public static final String USER_EMAIL = "test_register@test.ro";
-    public static final String USER_PASS = "1qaz@WSX3edc";
+    public static final String USER_PASS = "1qaz@WSX3edc$RFV3";
     public static final String USER_NAME = "test_register";
     public static final String ADMINUSER_PASS = "parola11";
     public static final String ADMINUSER_NAME = "admin";

@@ -43,6 +43,18 @@ public class AccountPage extends BasePage {
 
     @FindBy(id = "rememberme")
     private WebElementFacade rememberMeCheckBox;
+    @FindBy(css = "#post-7 > div > div > div > div > nav > ul > li.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--edit-account")
+    private WebElementFacade accountDetailsButton;
+    @FindBy(id = "password_current")
+    private WebElementFacade currentPasswordField;
+    @FindBy(id = "password_1")
+    private WebElementFacade newPasswordField;
+    @FindBy(id = "password_2")
+    private WebElementFacade confirmNewPasswordField;
+    @FindBy(css = "#post-7 > div > div > div > div > div.woocommerce-message")
+    private WebElementFacade accountDetailsChangedSuccessMessage;
+    @FindBy(css = "#post-7 > div > div > div > div > div > form > p:nth-child(7) > button")
+    private WebElementFacade saveAccountDetailsButton;
 
     public void setPasswordField(String value) {
         typeInto(passwordField, value);
@@ -95,7 +107,8 @@ public class AccountPage extends BasePage {
     public void getLogoutLink() {
         shouldBeVisible(logoutLink);
     }
-    public void clickLogoutLink(){
+
+    public void clickLogoutLink() {
         clickOn(logoutLink);
     }
 
@@ -105,6 +118,31 @@ public class AccountPage extends BasePage {
 
     public void setRememberMeCheckBox() {
         setCheckbox(rememberMeCheckBox, true);
+    }
+
+    public void clickAccountDetailsButton() {
+        clickOn(accountDetailsButton);
+    }
+
+    public void setCurrentPasswordField(String value) {
+        typeInto(currentPasswordField, value);
+    }
+
+    public void setNewPasswordField(String value) {
+        typeInto(newPasswordField, value);
+    }
+
+    public void setConfirmNewPasswordField(String value) {
+        typeInto(confirmNewPasswordField, value);
+    }
+    public String getAccountDetailsChangedSuccessMessage(){
+        return accountDetailsChangedSuccessMessage.getText();
+    }
+    public boolean assertAccountDetailsChangedSuccessMessage(){
+        return accountDetailsChangedSuccessMessage.isDisplayed();
+    }
+    public void clickSaveAccountDetailsButton() {
+        clickOn(saveAccountDetailsButton);
     }
 
 }
