@@ -55,6 +55,8 @@ public class AccountPage extends BasePage {
     private WebElementFacade accountDetailsChangedSuccessMessage;
     @FindBy(css = "#post-7 > div > div > div > div > div > form > p:nth-child(7) > button")
     private WebElementFacade saveAccountDetailsButton;
+    @FindBy(css = "#post-7 > div > div > div > div > ul > li")
+    private WebElementFacade currentPasswordIsIncorrect;
 
     public void setPasswordField(String value) {
         typeInto(passwordField, value);
@@ -143,6 +145,9 @@ public class AccountPage extends BasePage {
     }
     public void clickSaveAccountDetailsButton() {
         clickOn(saveAccountDetailsButton);
+    }
+    public String getCurrentPasswordIsIncorrect() {
+        return currentPasswordIsIncorrect.getText();
     }
 
 }

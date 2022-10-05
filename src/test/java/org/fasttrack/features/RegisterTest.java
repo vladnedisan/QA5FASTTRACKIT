@@ -6,7 +6,7 @@ public class RegisterTest extends BaseTest {
     @Test
     public void registerWithValidCredentialsTest() {
         loginSteps.navigateToLoginPage();
-        registerSteps.setRegisterUserEmail("abcd@test.ro");
+        registerSteps.setRegisterUserEmail("a"+"abcd@test.ro");
         registerSteps.setRegisterPassword("1qaz@WSX3edc");
         registerSteps.clickOnRegisterButton();
         registerSteps.assertValidRegistration();

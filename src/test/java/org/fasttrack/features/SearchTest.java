@@ -25,7 +25,6 @@ public class SearchTest extends BaseTest {
         searchSteps.searchForKeyword(keywordSearch);
         searchSteps.searchResultsTitleTextIsRelevantToSearchKeyword(keywordSearch);
     }
-
     @Test
     public void loginAndSearchForProductNameTest() {
         String keywordSearch = "a";
@@ -47,5 +46,10 @@ public class SearchTest extends BaseTest {
         searchSteps.searchForKeyword(keywordSearch);
         searchSteps.assertSearchResultText(("Search results: " + "“" + "”").toUpperCase());
     }
-
+    /*@Test
+    public void searchResultsDisplayedListRelevantToSearchKeywordTest() {
+        String keywordSearch = "a";
+        searchSteps.searchForKeyword(keywordSearch);
+        searchSteps.assertSearchResultsTitleTextIsRelevantToSearchKeyword(keywordSearch);
+    }*/
 }

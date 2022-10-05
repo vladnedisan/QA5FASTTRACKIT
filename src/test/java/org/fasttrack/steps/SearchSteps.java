@@ -28,13 +28,13 @@ public class SearchSteps extends BaseSteps {
         searchResultsPage.getSearchResultsTitleText().contains(value);
     }
     @Step
-    public void assertSearchResultsTitleTextIsRelevantToSearchKeyword(){
-
+    public void assertSearchResultsTitleTextIsRelevantToSearchKeyword(String productName){
+        Assert.assertTrue(searchResultsPage.findProductInGrid(productName));
     }
     @Step
     public void navigateToProductName(String productName) {
         searchForKeyword(productName);
-        //findProductWithNameInListAndOpen(productName);
+
     }
 
 

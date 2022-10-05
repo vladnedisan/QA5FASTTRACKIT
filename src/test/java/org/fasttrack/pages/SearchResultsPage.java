@@ -9,7 +9,7 @@ import java.util.List;
 public class SearchResultsPage extends PageObject {
 
     @FindBy(css = ".category-products .item .product-name a")
-    private static List<WebElementFacade> listOfProductNames;
+    private List<WebElementFacade> listOfProductNames;
 
     @FindBy(css = "#title_bread_wrap > div > h1")
     private WebElementFacade searchResultsText;
@@ -23,10 +23,9 @@ public class SearchResultsPage extends PageObject {
         return searchResultsTitleText.getText();
     }
 
-    public static boolean findProductInGridAndOpen(String productName) {
+    public boolean findProductInGrid(String productName) {
         for (WebElementFacade element : listOfProductNames) {
             if (element.getText().equalsIgnoreCase(productName)) {
-                element.click();
                 return true;
             }
         }
