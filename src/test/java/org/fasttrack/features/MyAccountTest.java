@@ -15,18 +15,18 @@ public class MyAccountTest extends BaseTest{
 
     @Test
     public void changePasswordTest(){
-        String newPassword = "1qaz@WSX3edc$1";
-        String currentPassword = newPassword;
+        String newPassword;
+        String currentPassword = Constants.USER_PASS1;
         loginSteps.doLogin(Constants.USER_EMAIL1,Constants.USER_PASS1);
         accountSteps.clickAccountDetailsButton();
-        accountSteps.setCurrentPasswordField(currentPassword);
+        accountSteps.setCurrentPasswordField(Constants.USER_PASS1);
+        newPassword = currentPassword + "1" ;
+        accountSteps.updatePasswordInConstants(newPassword);
         accountSteps.setNewPasswordField(newPassword);
         accountSteps.setConfirmNewPasswordField(newPassword);
         accountSteps.clickSaveAccountDetailsButton();
         accountSteps.assertAccountDetailsChangedSuccessMessage();
-        if(currentPassword.equals(newPassword)){
-            newPassword.charAt(2);
-        }
+
     }
     @Test
     public void changePasswordWithCurrentPasswordWrongTest() {

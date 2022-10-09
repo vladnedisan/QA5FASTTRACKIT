@@ -34,5 +34,10 @@ public class AccountSteps extends BaseSteps {
         String PasswordIsIncorrectMessage = "Your current password is incorrect.";
         Assert.assertEquals(PasswordIsIncorrectMessage.toUpperCase(),accountPage.getCurrentPasswordIsIncorrect().toUpperCase());
     }
+    @Step
+    public void updatePasswordInConstants (String str){
+        Constants.USER_PASS1 = str;
+        System.out.println("Password changed to: "+str);
+    }
 
 }
