@@ -1,13 +1,14 @@
 package org.fasttrack.features;
 
+import org.fasttrack.utils.Constants;
 import org.junit.Test;
 
 public class RegisterTest extends BaseTest {
     @Test
     public void registerWithValidCredentialsTest() {
         loginSteps.navigateToLoginPage();
-        registerSteps.setRegisterUserEmail("b"+"abcd@test.ro");
-        registerSteps.setRegisterPassword("1qaz@WSX3edc");
+        registerSteps.setRegisterUserEmail("c"+ Constants.USER_EMAIL1);
+        registerSteps.setRegisterPassword(Constants.USER_PASS2);
         registerSteps.clickOnRegisterButton();
         registerSteps.assertValidRegistration();
     }
@@ -16,7 +17,7 @@ public class RegisterTest extends BaseTest {
     public void registerWithMissingEmailTest() {
         loginSteps.navigateToLoginPage();
         registerSteps.setRegisterUserEmail("");
-        registerSteps.setRegisterPassword("1qaz@WSX3edc");
+        registerSteps.setRegisterPassword(Constants.USER_PASS2);
         registerSteps.clickOnRegisterButton();
         registerSteps.assertMissingEmailRegistration();
     }
@@ -24,7 +25,7 @@ public class RegisterTest extends BaseTest {
     @Test
     public void registerWithInvalidPasswordTest() {
         loginSteps.navigateToLoginPage();
-        registerSteps.setRegisterUserEmail("abc@test.ro");
+        registerSteps.setRegisterUserEmail(Constants.USER_EMAIL1);
         registerSteps.setRegisterPassword("1");
         registerSteps.assertInvalidPasswordRegistration();
     }
@@ -32,8 +33,8 @@ public class RegisterTest extends BaseTest {
     @Test
     public void registerWithAlreadyUsedEmailTest() {
         loginSteps.navigateToLoginPage();
-        registerSteps.setRegisterUserEmail("abc@test.ro");
-        registerSteps.setRegisterPassword("1qaz@WSX3edc");
+        registerSteps.setRegisterUserEmail(Constants.USER_EMAIL1);
+        registerSteps.setRegisterPassword(Constants.USER_PASS2);
         registerSteps.clickOnRegisterButton();
         registerSteps.assertAlreadyUsedEmailRegistration();
     }
